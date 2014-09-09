@@ -1,4 +1,4 @@
-angular.module('crm.app').controller('customerListController',['$scope', '$http', function($scope, $http){
+angular.module('crmy.app').controller('CustomerListController',['$scope', '$http', function($scope, $http){
 
     $http.get('http://localhost:3000/customers')
         .success(function(data, status, headers, config) {

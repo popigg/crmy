@@ -17,11 +17,12 @@ crmyApp.config(function($stateProvider, $urlRouterProvider) {
     })
     .state('login', {
         url: '/login',
-        templateUrl: 'htdocs/templates/partials/login.html'
+        templateUrl: 'htdocs/templates/partials/login.html',
+        controller: 'LoginController'
     })
     .state('customerList', {
         url: '/customers',
         templateUrl: 'htdocs/templates/partials/customerList.html',
-        controller: 'customerListController'
+        controller: 'CustomerListController'
     })
 });

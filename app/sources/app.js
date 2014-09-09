@@ -1,13 +1,13 @@
 'use strict';
 
-var crmApp = angular.module('crm.app',
+var crmyApp = angular.module('crmy.app',
     [
         'ui.router',
         'ui.bootstrap'
     ]
 );
 
-crmApp.config(function($stateProvider, $urlRouterProvider) {
+crmyApp.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/login");
 
     $stateProvider

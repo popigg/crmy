@@ -7,7 +7,7 @@ var customer = new schema({
     fullName                : { type: String, required: true },
     age                     : { type: Number, required: true },
     phoneNumber             : { type: Number, required: true },
-    email                   : { type: Number },
+    email                   : { type: String },
     nextAppointment         : { type: schema.Types.ObjectId, ref: 'Appointment' },
     historyAppointment      : [ { type: schema.Types.ObjectId, ref: 'Appointment' } ],
     history                 : String,

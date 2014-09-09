@@ -1,9 +1,19 @@
 'use strict';
 
-var customerController = require('../controllers/customerController');
-var appointmentController = require('../controllers/appointmentController');
+var customerController      = require('../controllers/customerController');
+var appointmentController   = require('../controllers/appointmentController');
+var userController          = require('../controllers/userController');
 
-module.exports = function(router) {
+module.exports = function(router, passport) {
+
+    router.route('/user/:id')
+        .put(userController.updateUser);
+
+    router.route('/user/create')
+        .post(userController.createUser);
+
+    router.route('/login')
+        .post(passport.authenticate('local'), userController.getUser);
 
     router.route('/customer/:id')
         .get(customerController.getCustomer)

@@ -1,5 +1,5 @@
 {
-  "name": "crm",
+  "name": "crmy",
   "version": "0.0.0",
   "description": "crm",
   "main": "index.js",
@@ -10,7 +10,11 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.6.2",
+    "cookie-parser": "^1.3.3",
     "express": "^4.8.2",
-    "mongoose": "^3.8.14"
+    "express-session": "^1.8.1",
+    "mongoose": "^3.8.14",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0"
   }
 }

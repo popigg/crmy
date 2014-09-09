@@ -1,0 +1,21 @@
+{
+  "name": "crmy",
+  "version": "0.0.1",
+  "homepage": "https://github.com/popigg/crmy",
+  "authors": [
+    "popigg <popigg@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-bootstrap": "~0.11.0",
+    "angular": "~1.2.21",
+    "angular-ui-router": "~0.2.10"
+  }
+}

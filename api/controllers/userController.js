@@ -13,13 +13,13 @@ exports.createUser = function(req, res) {
     });
 };
 
-exports.getUser = function(req, res) {
-    user.findOne({ email: req.body.email, pass: req.body.pass }, function(error, userObj) {
+exports.getUser = function(req, res) {    
+    user.findOne({ email: req.body.email }, function(error, userObj) {
         if (error) {
             res.status(501).send(error);
             return;
         }
-
+        
         res.send(userObj);
     });
 };

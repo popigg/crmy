@@ -27,12 +27,13 @@ mongoose.connection.on('error', function() {
  * express configuration
  */
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(session({secret: 'keyboard cat'}));
+app.use(session({ secret: 'myBike', key: 'token', resave: false, saveUninitialized: false } ));
 app.use( function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, Authorization');
     next();
 });
 

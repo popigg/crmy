@@ -2,13 +2,13 @@
 
 angular.module('crmy.auth').controller('LoginController',
     [   '$scope',
-        '$window',
         '$location',
+        '$cookieStore',
         'AuthService',
 
         function AuthController ($scope,
-                $window,
                 $location,
+                $cookieStore,
                 AuthService) {
 
             $scope.user = {};
@@ -18,7 +18,7 @@ angular.module('crmy.auth').controller('LoginController',
                 AuthService
                     .login(user)
                     .then(function() {
-                        $window.sessionStorage.token = AuthService.token;
+                        $cookieStore.put('auth_token', AuthService.token);
                         $location.url('/customers');
                     }, function(err) {
                         $scope.valid = 'has-error has-fedback';

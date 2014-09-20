@@ -4,35 +4,34 @@ var customerController      = require('../controllers/customerController');
 var appointmentController   = require('../controllers/appointmentController');
 var userController          = require('../controllers/userController');
 var authController          = require('../controllers/authController');
-var authMiddleware          = require('../middlewares/authMiddleware');
 
 module.exports = function(router, passport) {
 
     router.route('/user/:id')
-        .put(authMiddleware.isAuthenticated, userController.updateUser);
+        .put(authController.isAuthenticated, userController.updateUser);
 
     router.route('/user/create')
-        .post(authMiddleware.isAuthenticated, userController.createUser);
+        .post(authController.isAuthenticated, userController.createUser);
 
     router.route('/login')
         .post(authController.login);
 
     router.route('/customer/:id')
-        .get(authMiddleware.isAuthenticated, customerController.getCustomer)
-        .put(authMiddleware.isAuthenticated, customerController.updateCustomer)
-        .delete(authMiddleware.isAuthenticated, customerController.removeCustomer);
+        .get(authController.isAuthenticated, customerController.getCustomer)
+        .put(authController.isAuthenticated, customerController.updateCustomer)
+        .delete(authController.isAuthenticated, customerController.removeCustomer);
 
     router.route('/customer')
-        .post(authMiddleware.isAuthenticated, customerController.createCustomer);
+        .post(authController.isAuthenticated, customerController.createCustomer);
 
     router.route('/customers')
-        .get(authMiddleware.isAuthenticated, customerController.getCustomers);
+        .get(authController.isAuthenticated, customerController.getCustomers);
 
     router.route('/appointment/:id')
-        .get(authMiddleware.isAuthenticated, appointmentController.getAppointment)
-        .put(authMiddleware.isAuthenticated, appointmentController.updateAppointment)
-        .delete(authMiddleware.isAuthenticated, appointmentController.removeAppointment);
+        .get(authController.isAuthenticated, appointmentController.getAppointment)
+        .put(authController.isAuthenticated, appointmentController.updateAppointment)
+        .delete(authController.isAuthenticated, appointmentController.removeAppointment);
 
     router.route('/appointment')
-        .post(authMiddleware.isAuthenticated, appointmentController.createAppointment);
+        .post(authController.isAuthenticated, appointmentController.createAppointment);
 };

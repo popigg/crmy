@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('crmy.auth').controller('LoginController',
+angular.module('crmy.auth').controller('AuthController',
     [   '$scope',
         '$location',
         '$cookieStore',
@@ -19,10 +19,8 @@ angular.module('crmy.auth').controller('LoginController',
                     .login(user)
                     .then(function() {
                         $cookieStore.put('auth_token', AuthService.token);
-                        $location.url('/customers');
                     }, function(err) {
                         $scope.valid = 'has-error has-fedback';
-                        $location.url('/login');
                     });
             };
         }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="crmy">
+<html lang="en" data-ng-app="crmy">
 <head>
     <title>customer care</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -10,7 +10,7 @@
 
     <div class="row">
         <div>
-            <div class="container-fluid" ui-view></div>
+            <div class="container-fluid" data-ui-view></div>
         </div>
     </div>
 
@@ -28,6 +28,7 @@
     <script src="modules/customer/CustomerService.js"></script>
     <script src="modules/auth/AuthModule.js"></script>
     <script src="modules/auth/AuthController.js"></script>
+    <script src="modules/auth/AuthDirective.js"></script>
     <script src="modules/auth/AuthService.js"></script>
     <script src="modules/auth/AuthServiceInterceptor.js"></script>
 </body>

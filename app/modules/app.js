@@ -11,18 +11,14 @@ var crmyApp = angular.module('crmy',
 );
 
 crmyApp.config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/login");
+    $urlRouterProvider.otherwise("/");
 
     $stateProvider
-    .state('logout', {
-        url: '/logout',
-        templateUrl: 'partials/auth/logout.html'
+    .state('/', {
+        url: '/',
+        templateUrl: 'partials/init.html'
     })
-    .state('login', {
-        url: '/login',
-        templateUrl: 'partials/auth/login.html',
-        controller: 'LoginController'
-    })
+
     .state('customerList', {
         url: '/customers',
         templateUrl: 'partials/customer/customerList.html',

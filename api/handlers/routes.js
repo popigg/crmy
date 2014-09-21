@@ -5,7 +5,7 @@ var appointmentController   = require('../controllers/appointmentController');
 var userController          = require('../controllers/userController');
 var authController          = require('../controllers/authController');
 
-module.exports = function(router, passport) {
+module.exports = function(router) {
 
     router.route('/user/:id')
         .put(authController.isAuthenticated, userController.updateUser);

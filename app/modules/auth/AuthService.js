@@ -19,7 +19,20 @@ angular.module('crmy.auth').factory('AuthService',
                 .error(function(data, status, headers, config) {
 
                 });
+            };
+
+            AuthService.checkToken = function(token) {
+                return $http.post('http://localhost:3000/auth_token', {
+
+                })
+                .success(function(data, status, headers, config){
+
+                })
+                .error(function(data, status, headers, config) {
+
+                })
             }
+
             return AuthService;
         }
     ]

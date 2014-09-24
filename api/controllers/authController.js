@@ -68,4 +68,8 @@ exports.isAuthenticated = function(req, res, next) {
     } else {
         return res.status(401).send();
     }
-}
+};
+
+exports.success = function(req, res) {
+    res.send();
+};

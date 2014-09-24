@@ -16,6 +16,9 @@ module.exports = function(router) {
     router.route('/login')
         .post(authController.login);
 
+    router.route('/auth_token')
+        .post(authController.isAuthenticated, authController.success);
+
     router.route('/customer/:id')
         .get(authController.isAuthenticated, customerController.getCustomer)
         .put(authController.isAuthenticated, customerController.updateCustomer)

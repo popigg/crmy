@@ -12,7 +12,7 @@ angular.module('crmy.customer').controller('CustomerController',
                 .then(function(){
                     $scope.customerList = CustomerService.customerList;
                 }, function(){
-                   $location.url('/customers');
+                   $location.url('/login');
                 });
 
             $scope.getCustomerDetails = function(id) {

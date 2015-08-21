@@ -1,6 +1,7 @@
 var passport  = require('passport');
 var jwt       = require('jsonwebtoken');
 var user      = require('../models/user');
+var secret    = require('../config/secret.json').secret;
 
 /**
  * Logout
@@ -34,7 +35,7 @@ exports.login = function (req, res) {
             email   : user.email
         };
 
-      var token = jwt.sign(profile, 'myBike2' , { expiresInMinutes: 60*5 });
+      var token = jwt.sign(profile, secret , { expiresInMinutes: 60*5 });
       
       res.json({ token: token });
     });
@@ -49,21 +50,15 @@ exports.login = function (req, res) {
  */
 exports.isAuthenticated = function(req, res, next) {
 
-    var token = req.headers.authorization;
+    var token = req.headers.authorization;    
 
     if(token) {
-        jwt.verify(token, 'myBike2', function(err, decoded) {
-            if (err) { return res.status(501).send(err); }
+        jwt.verify(token, secret, function(err, decoded) {
+            if (err) { 
+              return res.status(401).send(err); 
+            } 
 
-            user.findById(decoded.id, function(err, userObj){
-                if(err) {return res.status(501).send(err); }
-
-                if (decoded.email == userObj.email) {
-                    return next();
-                } else{
-                    return res.status(401).send();
-                }
-            });
+            return next();
         });
     } else {
         return res.status(401).send();

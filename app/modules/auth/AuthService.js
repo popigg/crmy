@@ -5,8 +5,6 @@ angular.module('crmy.auth').factory('AuthService',
 
         function AuthService ($http) {
 
-            AuthService = {};
-
             AuthService.login = function(user) {
 
                 return $http.post('http://localhost:3000/login', {

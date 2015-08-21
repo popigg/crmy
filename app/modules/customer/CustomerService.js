@@ -5,7 +5,6 @@ angular.module('crmy.customer').factory('CustomerService',
 
         function CustomerService ($http) {
 
-            CustomerService = {};
             CustomerService.getCustomers = function() {
 
                 return $http.get('http://localhost:3000/customers')

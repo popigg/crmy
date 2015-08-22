@@ -1,19 +1,21 @@
-<div class="col-xs-8 col-xs-offset-2">
+<div>
     <h3>CLIENTES</h3>
-    <table class="table table-striped">
-        <thead>
-            <tr>                
-                <th>Nombre</th>
-                <th>Edad</th>
-                <th>Telefono</th>
-            </tr>
-        </thead>
-        <tbody class="table-striped">            
-            <tr data-ng-repeat="customer in customerList" data-ng-click="getCustomerDetails(customer._id)">
-                <td>{{ customer.fullName }}</td>
-                <td>{{ customer.age }}</td>
-                <td>{{ customer.phoneNumber }}</td>
-            </tr> 
-        </tbody>
-    </table>
+
+    <div class="customerList">
+
+        <div class="customerListHeader">
+            <span>Nombre</span>
+            <span>Edad</span>
+            <span>Telefono</span>
+        </div>
+
+        <div class="customerListContent" data-ng-repeat="customer in customerList" data-ng-click="getCustomerDetails(customer._id)">
+            <span>{{ customer.fullName }}</span>>
+            <span>{{ customer.age }}</span>
+            <span>{{ customer.phoneNumber }}</span>
+        </div>
+    </div>
+
 </div>
+
+<button data-ng-click="createNewCustomer()">+ customer</button>

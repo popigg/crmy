@@ -19,7 +19,11 @@ angular.module('crmy.customer').controller('CustomerController',
                 console.log(id);
                 
                 $location.url('customerDetails/' + id);
-            }
+            };
+
+            $scope.createNewCustomer = function() {
+                console.log('new customer');
+            };
         }
     ]
 );

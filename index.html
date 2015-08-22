@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="crmy">
+<head>
+    <title>customer care</title>
+    <link rel="stylesheet" href="assets/css/grid.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div data-ui-view="navigation"></div>
+    <div data-ui-view="main"></div>
+
+    <!-- Add bower components here -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-0.11.0.js"></script>
+    <script src="bower_components/angular-ui-bootstrap/dist/ui-bootstrap-tpls-0.11.0.js"></script>
+
+    <!-- Add app modules here -->
+    <script src="app/app.js"></script>
+    <script src="app/modules/customer/CustomerModule.js"></script>
+    <script src="app/modules/customer/CustomerController.js"></script>
+    <script src="app/modules/customer/CustomerDetailsController.js"></script>
+    <script src="app/modules/customer/CustomerService.js"></script>
+    <script src="app/modules/auth/AuthModule.js"></script>
+    <script src="app/modules/auth/AuthController.js"></script>
+    <script src="app/modules/auth/AuthService.js"></script>
+    <script src="app/modules/auth/AuthServiceInterceptor.js"></script>
+</body>
+</html>

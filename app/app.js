@@ -3,7 +3,6 @@
 var crmyApp = angular.module('crmy',
     [
         'ui.router',
-        'ui.bootstrap',
         'ngCookies',
         'crmy.auth',
         'crmy.customer'

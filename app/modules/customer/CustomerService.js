@@ -19,7 +19,7 @@ angular.module('crmy.customer').factory('CustomerService',
                         // console.log('headers: ', headers);
                         // console.log('config: ', config);
                     });
-            }
+            };
 
             CustomerService.getCustomerDetails = function(id) {
                 return $http.get('http://localhost:3000/customer/' + id)
@@ -34,7 +34,18 @@ angular.module('crmy.customer').factory('CustomerService',
                         // console.log('headers: ', headers);
                         // console.log('config: ', config);
                     });
-            }
+            };
+
+            CustomerService.createNewCustomer = function(customer) {
+
+                return $http.post('http://localhost:3000/customer', customer)
+                    .success(function(data, status, headers, config) {
+                        console.log(customer);
+                    })
+                    .error(function(data, status, headers, config) {
+                        console.log('error introducing a new customer');
+                    })
+            };
 
             return CustomerService;
         }

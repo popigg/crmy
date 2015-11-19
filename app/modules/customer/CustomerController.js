@@ -17,19 +17,18 @@ angular.module('crmy.customer').controller('CustomerController',
 
                 if(!customer) {
                     customer = {
-                        fullName    : 'Julia rodriguez',
-                        age         : '34',
-                        phoneNumber : '564234755',
-                        email       : 'juliarr@gmail.com'
+                        fullName    : 'Jose Perez',
+                        age         : '46',
+                        phoneNumber : '87833737',
+                        email       : 'joseper@gmail.com'
                     };
                 }
 
                 CustomerService
                     .createNewCustomer(customer)
                     .then(function(customer) {
-                        // todo: push customer into customerList
-
                         console.log(customer);
+                        $scope.customerList.push(customer.data);
                     }, function(){
 
                     });
